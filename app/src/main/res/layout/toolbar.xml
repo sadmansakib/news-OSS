@@ -3,12 +3,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    style="@style/Widget.MaterialComponents.AppBarLayout.PrimarySurface"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        style="@style/Widget.MaterialComponents.Toolbar"/>
+        style="@style/Widget.MaterialComponents.Toolbar.PrimarySurface"/>
 
 </com.google.android.material.appbar.AppBarLayout>
