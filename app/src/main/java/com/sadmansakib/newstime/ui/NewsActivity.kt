@@ -5,9 +5,11 @@ import android.os.Bundle
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.sadmansakib.newstime.R
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.activity_news.*
 import kotlinx.android.synthetic.main.toolbar.*
 
+@AndroidEntryPoint
 class NewsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
