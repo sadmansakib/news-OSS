@@ -8,6 +8,8 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import com.sadmansakib.newstime.R
+import com.sadmansakib.newstime.models.NewsResponse
+import com.sadmansakib.newstime.network.DataState
 import com.sadmansakib.newstime.ui.viewmodels.TopNewsViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -20,9 +22,13 @@ class TopNewsFragment : Fragment(R.layout.fragment_top_news) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         Log.d("topnews", "fragment started")
-        topNewsViewModel.breakingNews.observe(viewLifecycleOwner, Observer { news ->
-            Log.d("info", news.status)
+        topNewsViewModel.breakingNews.observe(viewLifecycleOwner, Observer { responseState ->
+            when(responseState){
+                is DataState.SUCCESS<NewsResponse> -> {
+                    Log.d("data",
+                        responseState.data.totalResults.toString())
+                }
+            }
         })
     }
-
 }
