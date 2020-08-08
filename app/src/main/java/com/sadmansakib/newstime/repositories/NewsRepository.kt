@@ -31,5 +31,4 @@ class NewsRepository @Inject constructor(
             emit(DataState.ERROR(e))
         }
     }
-
 }
