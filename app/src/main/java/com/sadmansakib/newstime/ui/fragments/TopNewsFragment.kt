@@ -25,7 +25,8 @@ class TopNewsFragment : Fragment(R.layout.fragment_top_news) {
         topNewsViewModel.breakingNews.observe(viewLifecycleOwner, Observer { responseState ->
             when(responseState){
                 is DataState.SUCCESS<NewsResponse> -> {
-                    Log.d("data", responseState.data.totalResults.toString())
+                    Log.d("data",
+                        responseState.data.totalResults.toString())
                 }
             }
         })

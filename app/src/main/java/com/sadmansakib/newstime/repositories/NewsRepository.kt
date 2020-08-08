@@ -13,6 +13,7 @@ import javax.inject.Inject
 class NewsRepository @Inject constructor(
     private val networkInterface: NewsNetworkInterface
 ) {
+
     suspend fun getTopNews(countryCode: String, 
                            category: String ,
                            page: Int): Flow<DataState<NewsResponse>> = flow {
@@ -30,4 +31,5 @@ class NewsRepository @Inject constructor(
             emit(DataState.ERROR(e))
         }
     }
+
 }
