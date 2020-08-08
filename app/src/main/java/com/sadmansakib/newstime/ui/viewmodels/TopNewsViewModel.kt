@@ -29,7 +29,6 @@ class TopNewsViewModel @ViewModelInject constructor(
         newsRepository.getTopNews(country, category="technology" , page= breakingNewsPage)
             .onEach {
                 dataState ->  breakingNews.value = dataState
-            }
-            .launchIn(viewModelScope)
+            }.launchIn(viewModelScope)
     }
 }

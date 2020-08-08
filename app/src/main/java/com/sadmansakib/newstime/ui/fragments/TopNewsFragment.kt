@@ -31,5 +31,4 @@ class TopNewsFragment : Fragment(R.layout.fragment_top_news) {
             }
         })
     }
-
 }
