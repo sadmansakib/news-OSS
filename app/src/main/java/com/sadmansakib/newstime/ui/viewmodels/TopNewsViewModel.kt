@@ -16,13 +16,14 @@ import kotlinx.coroutines.launch
 class TopNewsViewModel @ViewModelInject constructor(
     private val newsRepository: NewsRepository
 ): ViewModel() {
-
+  
     val breakingNews: MutableLiveData<DataState<NewsResponse>> = MutableLiveData()
     private var breakingNewsPage = 1
 
     init {
         getTopNews(country = "us")
     }
+
 
     @ExperimentalCoroutinesApi
     private fun getTopNews(country: String)= viewModelScope.launch {
