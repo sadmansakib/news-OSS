@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
 import com.sadmansakib.newstime.R
 import com.sadmansakib.newstime.models.Article
 import kotlinx.android.synthetic.main.news_layout.view.*
@@ -45,7 +46,7 @@ class NewsAdapter : RecyclerView.Adapter<NewsAdapter.NewsViewHolder>() {
         val news = differ.currentList[position]
 
         holder.itemView.apply {
-            Glide.with(this).load(news.urlToImage).into(ivArticleImage)
+            Glide.with(this).asBitmap().apply(RequestOptions.overrideOf(400,400)).load(news.urlToImage).into(ivArticleImage)
             news_source.text = news.source.name
             news_title.text = news.title
             news_description.text = news.description
